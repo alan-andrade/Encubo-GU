@@ -5,5 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
 
+User.delete_all
 User.create name: 'Alan Andrade', email: 'alan.andradec@gmail.com', password: 'guG@llo', password_confirmation: 'guG@llo'
+
+CSV.foreach 'db/first-round-users.csv' do |row|
+  puts row.first
+  puts row.last
+
+  User.create name: 'unnamed', email: row.first, password: row.last , password_confirmation: row.last
+end
