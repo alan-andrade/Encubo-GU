@@ -1,0 +1,4 @@
+.row.contents-nav
+  %ul.unstyled
+    - @contents.each do |content|
+      %li= link_to content.name, content

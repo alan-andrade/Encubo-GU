@@ -1,0 +1,31 @@
+@import 'bootstrap';
+
+.with-background{
+  background: white image-url('products-bg.jpg') no-repeat right center;
+}
+
+.contents-nav{
+  a{
+    color: white; font-size: 120%;
+  }
+  ul{
+    list-style-type: none;
+    border-top: 5px solid gray;
+    border-bottom: 5px solid gray;
+    background: #555;
+    padding: 5px 0 5px 0;
+    margin: 0;
+    li{
+      display: inline;
+      margin-left: 5%;
+    }
+  }
+}
+
+.products-nav{ padding-top: 15px; }
+.body{ height: 500px; padding-top: 20px; }
+.bottom{
+  background: white;
+  border-top: 10px solid #0B438C;
+}
+.login{ background: #333; }
