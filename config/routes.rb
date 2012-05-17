@@ -3,4 +3,5 @@ EncuboGu::Application.routes.draw do
   resources :products
   resources :contents
   root to: 'user_sessions#new'
+  match 'signout', action: :destroy, controller: :user_sessions
 end
