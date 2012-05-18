@@ -11,7 +11,7 @@
   .row.contents-nav
     %ul.unstyled
       - @contents.each do |content|
-        %li= link_to content.name, [@product, content]
+        %li= link_to content.name, content
 
   = render partial: 'products/products_menu'
 
