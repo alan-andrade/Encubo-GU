@@ -6,7 +6,8 @@
 
       .span12
         %h1= @content.name
-        = raw @content.body
+        :markdown
+          = raw @content.body
 
   = render partial: 'contents_menu'
   = render partial: 'products/products_menu'
