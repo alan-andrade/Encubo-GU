@@ -1,7 +1,8 @@
 defaults: &defaults
   adapter: mysql2
+  encoding: utf8
   username: root
-  password:
+  password: mysqlG@llo
   host: localhost
 
 development:
@@ -12,6 +13,6 @@ test:
   <<: *defaults
   database: encubo_test
 
-productiont:
+production:
   <<: *defaults
   database: encubo_production
