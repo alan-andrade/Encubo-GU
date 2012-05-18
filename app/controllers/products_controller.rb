@@ -52,8 +52,10 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
-    session[:product_id] = @product_id
+    if params[:id]
+      @product = Product.find(params[:id])
+      session[:product_id] = @product.id
+    end
   end
 
 end
