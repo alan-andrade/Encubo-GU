@@ -6,8 +6,7 @@
 
       .span12
         %h1= @content.name
-        :markdown
-          = raw @content.body
+        =raw BlueCloth.new(@content.body).to_html
 
   = render partial: 'contents_menu'
   = render partial: 'products/products_menu'
