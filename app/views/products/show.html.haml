@@ -2,6 +2,8 @@
   .span12
     - if @current_user.admin?
       = link_to 'Editar', edit_product_path(@product)
+      |
+      = link_to 'Nuevo Contenido', new_content_path
     = image_tag @product.logo.url, class: :span4
 
   .span4

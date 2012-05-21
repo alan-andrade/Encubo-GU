@@ -7,11 +7,3 @@
       .span12
         %h1= @content.name
         = render :partial => 'form'
-
-  .row.contents-nav
-    %ul.unstyled
-      - @contents.each do |content|
-        %li= link_to content.name, content
-
-  = render partial: 'products/products_menu'
-
