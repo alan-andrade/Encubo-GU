@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
+  before_filter :require_user
   before_filter :get_product
   before_filter :get_contents
 

@@ -1,10 +1,8 @@
-.container
-  .row.with-background
-    .body
-      .span12
-        = image_tag @product.logo.url, class: :span4
+.body
+  .span12
+    - if @current_user.admin?
+      = link_to 'Editar', edit_product_path(@product)
+    = image_tag @product.logo.url, class: :span4
 
-      .span4
-        %p Presentacion
-  = render partial: 'contents/contents_menu'
-  = render partial: 'products_menu'
+  .span4
+    =raw BlueCloth.new(@product.body).to_html

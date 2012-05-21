@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :require_user
   before_filter :all_products, only: [:show, :index]
   before_filter :set_product, only: [:show, :edit, :create,:update]
 

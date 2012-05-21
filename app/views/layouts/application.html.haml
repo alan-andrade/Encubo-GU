@@ -10,4 +10,13 @@
     = csrf_meta_tags
 
   %body
-    = yield
+    .container
+      .row.with-background
+        = yield
+      = render :partial => 'contents/contents_menu'
+      = render :partial => 'products/products_menu'
+
+    .container
+      .row
+        .span1.offset11
+          =link_to 'Salir' , salir_path

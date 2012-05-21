@@ -1,12 +1,6 @@
-.container
-  .row.with-background
-    .body
-      .span12
-        = image_tag @product.logo.url, class: :span4
+.body
+  .span12
+    = image_tag @product.logo.url, class: :span4
 
-      .span12
-        %h1 Contenidos para #{@product.name}
-
-
-  = render partial: 'contents_menu'
-  = render partial: 'products/products_menu'
+  .span12
+    %h1 Contenidos para #{@product.name}
