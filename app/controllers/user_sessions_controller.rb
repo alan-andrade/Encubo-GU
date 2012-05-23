@@ -8,12 +8,12 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    logger.debug 'Auth started'
+    logger.info 'Auth started'
     if @user_session.save
-      logger.debug 'Auth Succeded'
+      logger.info 'Auth Succeded'
       redirect_to products_path
     else
-      logger.debug 'Auth Failed'
+      logger.info 'Auth Failed'
       render :action => :new
     end
   end
