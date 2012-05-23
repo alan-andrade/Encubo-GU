@@ -8,9 +8,12 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
+    logger.debug 'Auth started'
     if @user_session.save
-      redirect_back_or_default products_path
+      logger.debug 'Auth Succeded'
+      redirect_to products_path
     else
+      logger.debug 'Auth Failed'
       render :action => :new
     end
   end
@@ -18,6 +21,6 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
-    redirect_back_or_default new_user_session_url
+    redirect_to new_user_session_url
   end
 end
