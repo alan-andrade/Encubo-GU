@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_session, :current_user
 
-  private
-
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
@@ -18,7 +16,7 @@ class ApplicationController < ActionController::Base
     def require_user
       unless current_user
         flash[:notice] = "You must be logged in to access this page"
-        redirect_to new_user_session_url
+        redirect_to new_user_session_path
         return false
       end
     end

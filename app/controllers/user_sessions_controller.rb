@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  layout 'login'
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
 
@@ -8,12 +9,9 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    logger.info 'Auth started'
     if @user_session.save
-      logger.info 'Auth Succeded'
       redirect_to products_path
     else
-      logger.info 'Auth Failed'
       render :action => :new
     end
   end
@@ -21,6 +19,6 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
-    redirect_to new_user_session_url
+    redirect_to new_user_session_path
   end
 end

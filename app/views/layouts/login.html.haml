@@ -9,15 +9,6 @@
     = javascript_include_tag 'application'
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
-
   %body
-    .container
-      .row.with-background
-        = yield
-      = render :partial => 'contents/contents_menu'
-      = render :partial => 'products/products_menu'
+    =yield
 
-    .container
-      .row
-        .span1.offset11
-          =link_to 'Salir' , salir_path
