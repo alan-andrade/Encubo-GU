@@ -1,0 +1,12 @@
+%table.table
+  %thead
+    %tr
+      %th Email
+      %th Ingresos
+      %th Ultimo Ingreso
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.login_count
+        %td= user.last_login_at.try(:to_s, :short)

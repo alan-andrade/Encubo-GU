@@ -1,10 +1,11 @@
 .body
-  .span12
-    - if @current_user.admin?
-      = link_to 'Editar', edit_product_path(@product)
-      |
-      = link_to 'Nuevo Contenido', new_content_path
-    = image_tag @product.logo.url, class: :span4
+  .row
+    .span7
+      = image_tag @product.logo.url, class: :span4
+    .span5
+      - if @current_user.admin?
+        = link_to 'Editar', edit_product_path(@product), class: 'btn btn-primary'
+        = link_to 'Nuevo Contenido', new_content_path, class: 'btn btn-primary'
 
   .span4
     =raw BlueCloth.new(@product.body).to_html

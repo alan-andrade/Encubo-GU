@@ -13,11 +13,13 @@
   %body
     .container
       .row.with-background
+        .row
+          .span4.offset8
+            - if @current_user.admin?
+              = link_to 'Admin', admin_users_url, class: 'btn btn-danger'
+            =link_to 'Inicio' , root_path , class: 'btn btn-primary'
+            =link_to 'Salir' , salir_path , class: 'btn btn-warning'
         = yield
       = render :partial => 'contents/contents_menu'
       = render :partial => 'products/products_menu'
 
-    .container
-      .row
-        .span1.offset11
-          =link_to 'Salir' , salir_path

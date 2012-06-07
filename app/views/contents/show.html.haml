@@ -1,9 +1,11 @@
 .body
-  .span12
-    = image_tag @product.logo.url, class: :span4
+  .row
+    .span7
+      = image_tag @product.logo.url, class: :span4
+    .span3
+      - if @current_user.admin?
+        =link_to 'Editar', edit_content_path(@content), class: 'btn btn-primary'
 
   .span12
     %h1= @content.name
-    - if @current_user.admin?
-      =link_to 'Editar', edit_content_path(@content)
     =raw BlueCloth.new(@content.body).to_html
