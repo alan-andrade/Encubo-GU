@@ -12,8 +12,7 @@
 
   %body
     .container
-      .row.with-background
-        = yield
-      = render :partial => 'contents/contents_menu'
-      = render :partial => 'products/products_menu'
+      =link_to 'Inicio' , root_path , class: 'btn btn-primary'
+      =link_to 'Salir' , salir_path , class: 'btn btn-warning'
 
+      = yield

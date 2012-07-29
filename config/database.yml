@@ -2,12 +2,13 @@ defaults: &defaults
   adapter: mysql2
   encoding: utf8
   username: root
-  password: mysqlG@llo
   host: localhost
 
 development:
-  <<: *defaults
-  database: encubo_development
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 test:
   <<: *defaults

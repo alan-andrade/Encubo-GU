@@ -5,6 +5,6 @@ EncuboGu::Application.routes.draw do
   root to: 'user_sessions#new'
   match 'salir', action: :destroy, controller: :user_sessions, as: 'salir'
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :update]
   end
 end
