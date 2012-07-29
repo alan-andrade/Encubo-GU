@@ -13,7 +13,13 @@
   %body
     .container
       .row.with-background
+        .nav
+          .general
+            = link_to 'Inicio' , root_path , class: 'btn btn-primary'
+            - if current_user.admin?
+              = link_to 'Admin Control' , admin_users_url , class: 'btn btn-primary'
+        .clear
         = yield
-      = render :partial => 'contents/contents_menu'
-      = render :partial => 'products/products_menu'
+      = render partial: 'contents/contents_menu'
+      = render partial: 'products/products_menu'
 

@@ -34,6 +34,7 @@
     margin-top: -15px;
   }
 }
+
 .body{
   height: 600px;
   max-height: 600px;
@@ -44,4 +45,13 @@
 .bottom{
   background: white;
   border-top: 10px solid #0B438C;
+}
+
+.nav .general{
+  padding: 10px;
+  float: right;
+}
+
+.clear{
+  clear: both;
 }

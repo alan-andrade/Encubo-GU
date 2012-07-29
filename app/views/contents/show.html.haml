@@ -1,10 +1,10 @@
 .body
   .row
-    .span7
+    .span10
       = image_tag @product.logo.url, class: :span4
-    .span3
-      - if @current_user.admin?
-        =link_to 'Editar', edit_content_path(@content), class: 'btn btn-primary'
+  - if @current_user.admin?
+    .span12
+      =link_to 'Editar', edit_content_path(@content), class: 'btn'
 
   .span12
     %h1= @content.name

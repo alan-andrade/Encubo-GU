@@ -7,9 +7,8 @@
       %th Acciones
   %tbody
     - @users.each do |user|
-      %tr
+      %tr.user
         %td= user.email
         %td= user.login_count
         %td= user.last_login_at.try(:to_s, :short)
-        %td= link_to 'Desactivar', admin_user_path(user), class: 'btn btn-warning'
-
+        %td.toggle= toggle_access_link_for(user)
